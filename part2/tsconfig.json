@@ -1,0 +1,54 @@
+{
+  /* tsconfigはts コンパイラーのConfigファイル。ここにある情報を元にCodeのコンパイラーをする
+        include:　コンパイラーするファイルを指定
+        exclude: コンパイルしないファイルを指定。デフォルト値は[node_modules, "bower_component"]
+    */
+  "include": ["./src/**/*"],
+  //   "exclude": ["./src/home/*"]
+
+  /*
+  コンパイラーの設定
+  */
+  "compilerOptions": {
+    // コンパイル後のESのバージョンを指定
+    "target": "ES3",
+    // モジュールを指定
+    "module": "system",
+    // ライブラリー　プロジェクトで使うライブラリーを指定する
+    // "lib": ["dom"],// 普通はいじらなくても良い
+
+    // コンパイルした後のJSファイルの保管フォルダを指定
+    "outDir": "./dist",
+
+    // コンパイルしたファイルを合併する
+    // outFileを設定した後グローバルで動作するJSコードを一枚のJSにまとめる
+    "outFile": "./dist/app.js",
+
+    //JSファイルもコンパイルするかどうか
+    "allowJs": true,
+    "checkJs": true,
+
+    // コンパイル後コメントを消すかどうかの設定
+    "removeComments": false,
+
+    // コンパイル後のファイルを生成しない
+    "noEmit": false,
+
+    // エラーがあった時にコンパイルファイルを生成しない
+    "noEmitOnError": true,
+
+    // 厳格な検査を一括Onにする
+    "strict": true,
+    // コンパイル後のファイルをストイックモードにする。デフォルトはfalse
+    "alwaysStrict": true,
+
+    // 暗黙のany型を許可しない
+    "noImplicitAny": false,
+
+    // 指向が不明なthisを許可しない
+    "noImplicitThis": true,
+
+    // null チェックをする
+    "strictNullChecks": true
+  }
+}
