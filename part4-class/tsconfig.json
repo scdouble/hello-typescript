@@ -1,0 +1,15 @@
+{
+  /*
+  コンパイラーの設定
+  */
+  "compilerOptions": {
+    // コンパイル後のESのバージョンを指定
+    "target": "es2015",
+    // モジュールを指定
+    "module": "es2015",
+    // 厳格な検査を一括Onにする
+    "strict": true,
+    "outDir": "./dist"
+  },
+  "include": ["./src/**/*"]
+}
