@@ -37,3 +37,16 @@ tsc app.ts -w
 npm init -y
 cnpm i -D webpack webpack-cli typescript ts-loader 
 ```
+webpackから自動でhtmlを生成プラグイン
+```
+npm i -D html-webpack-plugin
+```
+開発サーバー導入する
+```
+npm i -D webpack-dev-server
+```
+
+コンパイルする前にDistファイルを空にするプラグイン
+```
+npm i -D clean-webpack-plugin
+```
