@@ -13,6 +13,10 @@ module.exports = {
     // パッケージされた後のpathをして
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
+    // webpackにアロー関数を使わせない
+    environment: {
+      arrowFunction: false,
+    },
   },
 
   // webpackがパッケージングする時に使うモジュールを指定
@@ -23,7 +27,35 @@ module.exports = {
         // testでルールが適用されるファイルを指定
         test: /\.ts$/,
         // 使うローダーを指定
-        use: "ts-loader",
+        use: [
+          // babelを設定
+          {
+            // loaderを指定
+            loader: "babel-loader",
+            // babel
+            options: {
+              // プログラムが動く環境をあらかじめ指定
+              presets: [
+                [
+                  //環境のプラグインを指定
+                  "@babel/preset-env",
+                  {
+                    targets: {
+                      //ブラウザーのバーション
+                      chrome: "58",
+                      ie: "11",
+                    },
+                    //core jsのバージョン
+                    corejs: "3",
+                    //core jsの方式をusageに指定。需要に応じて
+                    useBuiltIns: "usage",
+                  },
+                ],
+              ],
+            },
+          },
+          "ts-loader",
+        ],
         // 除外するファイルを指定
         exclude: / node_modules/,
       },
