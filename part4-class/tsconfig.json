@@ -9,7 +9,8 @@
     "module": "es2015",
     // 厳格な検査を一括Onにする
     "strict": true,
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "noEmitOnError": true
   },
   "include": ["./src/**/*"]
 }
