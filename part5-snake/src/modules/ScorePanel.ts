@@ -10,7 +10,7 @@ class ScorePanel {
 
   // レベルの制限
   maxLevel: number;
-  // レベル上げの点数を設定
+  // レベルが上がる点数の閾値を設定
   upScore: number;
 
   constructor(maxLevel: number = 10, upScore: number = 10) {
