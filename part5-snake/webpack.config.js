@@ -13,9 +13,10 @@ module.exports = {
     // パッケージされた後のpathをして
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
-    // webpackにアロー関数を使わせない
+    // webpackにアロー関数とconstを使わせない
     environment: {
       arrowFunction: false,
+      const : false,
     },
   },
 
