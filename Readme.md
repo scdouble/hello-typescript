@@ -57,8 +57,21 @@ npm i -D webpack-dev-server
 npm i -D clean-webpack-plugin
 ```
 
-babel
+babelを導入
 
 ```bash
 npm i -D @babel/core @babel/preset-env babel-loader core-js
+```
+
+less, less-loaderを導入
+
+```bash
+npm i -D less less-loader css-loader style-loader
+```
+
+postcss(古いブラウザーへのCSSの互換性を処理(プレフィックスの追加など))
+
+
+```bash
+npm i -D postcss postcss-loader postcss-preset-env
 ```
