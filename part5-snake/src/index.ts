@@ -1,6 +1,10 @@
+import GameControl from "./modules/GameControl";
 import "./style/index.less";
-import Food from "./modules/Food";
-import ScorePanel from "./modules/ScorePanel";
 
-const food = new Food()
-food.change();
+const gc = new GameControl()
+// const food = new Food()
+// food.change();
+
+// setInterval(()=>{
+// console.log(gc.direction)
+// },1000)
