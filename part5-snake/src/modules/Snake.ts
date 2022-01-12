@@ -22,9 +22,27 @@ class Snake {
 
   // 蛇の頭の座標を設定
   set X(value: number) {
+    // 新しい値が現在の値と同じなら数値を変更しない
+    if (this.X === value) {
+      return;
+    }
+
+    if(value < 0 || value > 290){
+        // 蛇が壁に当たる Error throw
+        throw new Error("Wall hit")
+    }
     this.head.style.left = value + "px";
   }
   set Y(value: number) {
+    if (this.Y === value) {
+      return;
+    }
+
+    if(value < 0 || value > 290){
+        // 蛇が壁に当たる
+        throw new Error("Wall hit")
+    }
+
     this.head.style.top = value + "px";
   }
 

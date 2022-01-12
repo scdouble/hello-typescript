@@ -79,13 +79,34 @@ class GameControl {
         X += 10;
         break;
     }
+    // 蛇が餌を食べたかを検査
+    this.checkEat(X, Y);
 
-    // 蛇の位置の値を変更
-    this.snake.X = X;
-    this.snake.Y = Y;
+    try {
+      // 蛇の位置の値を変更
+      this.snake.X = X;
+      this.snake.Y = Y;
+    } catch (e) {
+      alert(e);
+      // ゲーム停止
+      this.isLive = false;
+    }
 
     // timerをセット
-    this.isLive && setTimeout(this.run.bind(this), 300 - (this.scorePanel.level - 1) * 30);
+    this.isLive &&
+      setTimeout(this.run.bind(this), 300 - (this.scorePanel.level - 1) * 30);
+  }
+
+  checkEat(X: number, Y: number) {
+    if (X === this.food.X && Y === this.food.Y) {
+      console.log("eat");
+      // 餌の場所を変更
+      this.food.change();
+      // 得点を記録
+      this.scorePanel.addScore();
+      // 体を追加
+      this.snake.addBody();
+    }
   }
 }
 
