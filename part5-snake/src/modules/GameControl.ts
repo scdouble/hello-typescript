@@ -15,7 +15,7 @@ class GameControl {
   constructor() {
     this.snake = new Snake();
     this.food = new Food();
-    this.scorePanel = new ScorePanel();
+    this.scorePanel = new ScorePanel(10,3);
     // this.keyDownHandler = this.keyDownHandler.bind(this)
     this.init();
   }
